@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Itret Zehra</title>
+<meta name="description" content="Case studies from Itret Zehra: a bias-audit run on loan approval data and a compliance risk classification project.">
+<meta property="og:title" content="Work — Itret Zehra">
+<meta property="og:description" content="Case studies from Itret Zehra: a bias-audit run on loan approval data and a compliance risk classification project.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://itretzehra-max.github.io/projects.html">
+<meta property="og:image" content="https://itretzehra-max.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Work — Itret Zehra">
+<meta name="twitter:description" content="Case studies from Itret Zehra: a bias-audit run on loan approval data and a compliance risk classification project.">
+<meta name="twitter:image" content="https://itretzehra-max.github.io/assets/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap navrow">
+    <a class="brand" href="index.html">Itret <span>Zehra</span></a>
+    <nav class="links">
+      <a href="index.html">About</a>
+      <a href="projects.html" class="active">Work</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" style="border-top:none;">
+    <div class="eyebrow">Work &amp; proof</div>
+    <h1 style="font-size:32px;">What I've built and completed</h1>
+    <p class="lede">
+      Applied work from the FlyRank AI Fluency internship, plus certifications
+      that back up what's on my LinkedIn and CV.
+    </p>
+  </section>
+
+  <section style="border-top:none;">
+    <h2>Applied work</h2>
+    <div class="card">
+      <h3>This portfolio site</h3>
+      <div class="meta">flyrank-project · GitHub Pages · Aug 2026</div>
+      <p>A small static site built and shipped as part of FlyRank's Week 5 assignment —
+      the point was getting something real and live rather than a polished mockup.
+      Built with plain HTML and CSS, no framework, so every part of it is something I can
+      explain line by line.</p>
+      <ul>
+        <li>Repo: <a href="https://github.com/itretzehra-max/flyrank-project" target="_blank" rel="noopener">github.com/itretzehra-max/flyrank-project</a></li>
+        <li>Deployed via GitHub Actions to GitHub Pages</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>LinkedIn profile rebuild</h3>
+      <div class="meta">FlyRank AI Fluency internship · Aug 2026</div>
+      <p>Ran my LinkedIn through FlyRank's audit tool (started at 47/100), then went
+      through it flag by flag: rewrote role descriptions that had zero content, added
+      concrete scope to claims that were previously vague, tied my skills to the
+      education and experience entries where I actually used them, and removed a skill
+      (SQL) I hadn't learned yet instead of leaving it unbacked.</p>
+    </div>
+          <div class="card">
+        <h3>AI Risk Register Generator</h3>
+       <p><strong>The problem:</strong> Manually classifying AI systems under the EU AI Act's risk tiers takes too long for busy compliance teams, and it's easy to miss an obligation buried in the regulation's text.</p>
+<p><strong>What I did:</strong> Built a Python tool (originally wrapped in a Streamlit web app) that asks structured yes/no questions about how an AI system is used — does it fall under a prohibited use, does it operate in a high-risk domain like employment or credit, does it interact directly with users in a way that could deceive them — and maps the answers to the correct EU AI Act risk tier plus the specific mitigations that tier requires.</p>
+<p><strong>What I found (example run):</strong> Classifying a sample AI-powered resume-screening tool, the system flagged it as High Risk (used in the employment domain) and automatically listed the four required mitigations: a conformity assessment, technical documentation and a risk management system, human oversight with override capability, and activity logging for auditability.</p>
+<p><strong>What came of it:</strong> A 2-minute interactive session that replaces a manual read-through of the regulation with a structured decision tree — someone can classify a system and get the exact list of compliance obligations, not just a vague "this might be risky."</p>
+            <p><strong>Code:</strong> <a href="https://github.com/itretzehra-max/flyrank-project/blob/main/projects/risk_register.py" target="_blank">risk_register.py</a></p>
+      </div>
+      <div class="card">
+        <h3>AI System Compliance Case Study</h3>
+        <p><strong>The problem:</strong> Organizations deploy AI models on decision data (like loan approvals) without checking whether outcomes differ unfairly across demographic groups — creating legal exposure and hidden bias.</p>
+<p><strong>What I did:</strong> Built a Python/Pandas script that audits a sample loan-approval dataset (30 applicants, split evenly by gender) for bias. It calculates approval rates by group, applies the "four-fifths rule" (a standard regulatory fairness threshold), and cross-checks whether a legitimate factor like credit score actually explains any gap.</p>
+<p><strong>What I found:</strong> On the sample dataset, female applicants had a 40% approval rate versus 73.3% for male applicants — a 33-point gap. The four-fifths rule flagged this immediately (selection rate ratio of 0.55, well below the 0.80 threshold). But the average credit score gap between groups was only 19 points — too small to explain a 33-point approval gap on its own, meaning the disparity likely isn't fully justified by credit risk alone.</p>
+<p><strong>What came of it:</strong> A reusable audit script that gives compliance teams a concrete, quantified flag — not just "check for bias" but an actual pass/fail signal plus the reasoning behind it, so a human reviewer knows exactly what to investigate next.</p>
+        <p><strong>Code:</strong> <a href="https://github.com/itretzehra-max/flyrank-project/blob/main/projects/bias_audit.py" target="_blank">bias_audit.py</a> · <a href="https://github.com/itretzehra-max/flyrank-project/blob/main/projects/sample_loan_data.csv" target="_blank">sample_loan_data.csv</a></p>
+      </div>
+          <div class="card">
+        <h3>Live Contact Form</h3>
+        <div class="meta">flyrank-project · GitHub Pages · Aug 2026</div>
+        <p><strong>The problem:</strong> The portfolio site was static — visitors had no way to
+        actually reach out beyond a bare mailto link, so there was no real lead-capture point
+        on the site.</p>
+        <p><strong>What I did:</strong> Wired up a working contact form using Formspree, so
+        submissions on the Contact page get sent directly to my inbox without needing a backend
+        of my own.</p>
+        <p><strong>What came of it:</strong> A functioning dynamic feature on an otherwise
+        static site, plus a plain-words map of the data flow: visitor fills form → Formspree
+        receives the POST → email lands in my inbox.</p>
+      </div>
+  </section>
+  <section>
+    <h2>Certifications</h2>
+    <div class="certgrid">
+      <div class="card">
+        <h3>Financial Statement Analysis &amp; Reporting</h3>
+        <div class="meta">Alison · Jul 2026</div>
+        <p>Pivot tables, statistical data analysis.</p>
+      </div>
+      <div class="card">
+        <h3>Career Essentials in Generative AI</h3>
+        <div class="meta">Microsoft &amp; LinkedIn · Jun 2026</div>
+        <p>Core AI concepts, generative AI tools.</p>
+      </div>
+      <div class="card">
+        <h3>McKinsey.org Forward Program</h3>
+        <div class="meta">McKinsey &amp; Company · Jun 2026</div>
+        <p>Digital tools, generative AI tools, business decision making.</p>
+      </div>
+      <div class="card">
+        <h3>Critical Thinking in the AI Era</h3>
+        <div class="meta">HP LIFE · Jun 2026</div>
+        <p>Evaluating AI-generated content, detecting algorithmic bias.</p>
+      </div>
+      <div class="card">
+        <h3>AI Literacy for Everyone</h3>
+        <div class="meta">LinkedIn · Jun 2026</div>
+        <p>AI literacy, artificial intelligence fundamentals.</p>
+      </div>
+      <div class="card">
+        <h3>Python Essentials 1</h3>
+        <div class="meta">Cisco Networking Academy · Jun 2026</div>
+        <p>Algorithms, debugging — first formal step into programming.</p>
+      </div>
+      <div class="card">
+        <h3>Take the Lead</h3>
+        <div class="meta">eCornell (Cornell University) · May 2026</div>
+        <p>Leadership fundamentals, strategic influence.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="honest">
+    <strong>Still rough:</strong> the certifications above don't yet link out to
+    verifiable credential pages on this site — right now that proof lives on LinkedIn.
+    Adding direct credential links here is the next real task, not just a someday-item.
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="small">© 2026 Itret Zehra</span>
+    <div class="flinks">
+      <a href="mailto:itretzehra@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/itretzehra-099069327" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/itretzehra-max/flyrank-project" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
